@@ -8,7 +8,17 @@
 
 
 // Apply the java plugin to add support for Java
+
+
+
 apply plugin: 'java'
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+apply plugin: 'application'
+
+apply plugin: 'checkstyle'
 
 jar {
 	manifest {
@@ -16,9 +26,10 @@ jar {
 	}
 }
 
-run {
+/*run {
     standardInput = System.in
 }
+*/
 
 repositories {
     jcenter()

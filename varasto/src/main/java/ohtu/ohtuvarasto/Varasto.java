@@ -49,8 +49,7 @@ public class Varasto {
     public void lisaaVarastoon(double maara) {
         if (maara < 0) {
             return;       // tällainen pikapoistuminenkin!
-        }
-        if (maara <= paljonkoMahtuu()){
+        } else if (maara <= paljonkoMahtuu()){
             saldo = saldo + maara;          // ihan suoraan sellaisinaan
         } else {
             saldo = tilavuus;  // täyteen ja ylimäärä hukkaan!
@@ -60,8 +59,7 @@ public class Varasto {
     public double otaVarastosta(double maara) {
         if (maara < 0) {
             return 0.0;   // tällainen pikapoistuminenkin!
-        }
-        if (maara > saldo) {          // annetaan mitä voidaan
+        } else if (maara > saldo) {          // annetaan mitä voidaan
             double kaikkiMitaVoidaan = saldo;
             saldo = 0.0;               // ja tyhjäksi menee
             return kaikkiMitaVoidaan;  // poistutaan saman tien
